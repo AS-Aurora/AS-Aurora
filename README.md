@@ -1,5 +1,5 @@
 # 💫 About Me:
-📖I am currently enrolled in Siksha 'O' Anusandhan University to pursue a B-Tech in Computer Science Engineering.<br>🌱 I’m currently learning NextJS.<br>🔭 I’m currently working on a Pokedex based on React<br>
+📖I am enrolled in Siksha 'O' Anusandhan University to pursue a B-Tech in Computer Science Engineering.<br>🌱 I’m currently learning NextJS.<br>🔭 I'm now working on several NextJS projects to increase my knowledge.<br>
 
 
 # 💻 Tech Stack:
