@@ -89,6 +89,5 @@
 
 <!-- Snake Animation -->
 <div align="center">
-  <h2>🐍 Contribution Snake 🐍</h2>
-  <img src="https://raw.githubusercontent.com/AS-Aurora/AS-Aurora/dist/github-contribution-grid-snake-dark.svg" />
+  <img src="https://github.com/your-username/AS-Aurora/blob/output/github-contribution-grid-snake.svg" alt="Snake animation" />
 </div>
