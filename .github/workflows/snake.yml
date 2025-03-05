@@ -21,10 +21,11 @@ jobs:
           github_user_name: your-username  # 🔹 Replace with your GitHub username
           outputs: dist/snake.svg
 
-      - name: Commit and Push Snake Animation
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist/snake.svg
-          git commit -m "🐍 Update Snake Animation"
-          git push
+- name: Commit and Push Snake Animation
+  run: |
+    git config --global user.name "github-actions[bot]"
+    git config --global user.email "github-actions[bot]@users.noreply.github.com"
+    git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/AS-Aurora/AS-Aurora.git
+    git add dist/snake.svg
+    git commit -m "🐍 Update Snake Animation" || echo "No changes to commit"
+    git push origin main
