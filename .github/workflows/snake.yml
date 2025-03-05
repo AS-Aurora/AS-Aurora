@@ -1,52 +1,30 @@
-# GitHub Action for generating a contribution graph with a snake eating your contributions.
-name: Generate Snake
+name: Generate Snake Animation
 
-# Controls when the action will run.
 on:
   schedule:
-      # every 12 hours
-    - cron: "0 */12 * * *"
+    - cron: "0 0 * * *"  # Runs daily at midnight UTC
+  workflow_dispatch:  # Allows manual triggering
 
-  # This command allows us to run the Action automatically from the Actions tab.
-  workflow_dispatch:
-  
-  # Also run on every push on the master branch
-  push:
-    branches:
-    - main
+permissions:
+  contents: write  # ✅ Required to commit the snake animation
 
-# The sequence of runs in this workflow:
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  generate:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Clone repo
-        uses: actions/checkout@v3
-    
-      - name: Generate the snake files in './dist/'
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate Snake Animation
         uses: Platane/snk@v3
-        id: snake-gif
         with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-            dist/github-contribution-grid-snake.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
-        env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_user_name: your-username  # 🔹 Replace with your GitHub username
+          outputs: dist/snake.svg
 
-      - name: Show build status
-        run: git status
-
-      - name: Push new files to the output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
-        with:
-          target_branch: output
-          build_dir: dist
-          commit_message: Update snake animations
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and Push Snake Animation
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/snake.svg
+          git commit -m "🐍 Update Snake Animation"
+          git push
