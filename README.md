@@ -89,5 +89,5 @@
 
 <!-- Snake Animation -->
 <div align="center">
-  <img src="https://github.com/AS-Aurora/AS-Aurora/blob/main/dist/snake.svg" alt="Snake Animation" />
+  <img src="https://github.com/${{ AS-Aurora }}/${{ AS-Aurora }}/blob/main/dist/snake.svg" alt="Snake Animation" />
 </div>
