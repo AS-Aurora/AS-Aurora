@@ -125,8 +125,11 @@ A concise view of the technologies, tools, and frameworks I use to build scalabl
 ---
 
 <div align="center">
-🎮 Pac-Man Eating My Contributions
+  
+### 🎮 Pac-Man Eating My Contributions
+  
 ![](https://raw.githubusercontent.com/AS-Aurora/AS-Aurora/output/github-contribution-grid-snake.svg)
+
 </div>
 
 ---
